@@ -32,3 +32,4 @@
 *.tdo
 .DS_Store
 report.pdf
+*.fls
