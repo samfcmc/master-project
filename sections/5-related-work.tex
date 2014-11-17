@@ -4,12 +4,71 @@
 % Related work
 %
 
-\section{Related Work (~17pgs)}
+\section{Related Work}
 \label{related_work}
-In this section we describe...
+In this section we describe related work about
+development and deployment of mobile native and web 
+context-aware applications and we discuss the 
+limitations and the main benefits of each one of
+the following solutions, providing, at the same time,
+motivation to develop our framework.
 \begin{description}
-  \item[Dynamic Framework for building Highly-Localized Mobile Web DTN Applications]
-  \cite{Sankaran2014}
+  \item[Dynamic frameworks for Mobile web DTN applications]
+  There are multiple frameworks to deploy localized
+  mobile native or web apps, even if the user is using an
+  unstable Internet connection. One example of this
+  kind of frameworks is the one
+  described in \cite{Sankaran2014}.
+  This framework supports the deployment of localized 
+  native and
+  web apps in Delay Tolerant Networks (DTNs).
+  A DTN is an approach to computer networks that 
+  addresses issues about the lack of continuous network
+  connectivity. Mobile networks are good examples of DTNs. 
+  It also has an embedded web server 
+  and has an implementation that runs on a PC, which allow
+  developers to test the applications before deploying
+  to production environment.
+  However, the owner of a given point of interest does not
+  have access to any interface to install apps that will
+  belong to that point. Also, it does not support, in the
+  same app, multiple points of interest with different
+  meanings and different behavior in each one of them. 
   \item[Dynamix]
-  \cite{Carlson2012}
+  Dynamix \cite{Carlson2012} is a framework to develop
+  mobile native and web apps that allow them to receive
+  context information, for instance, position and device's
+  orientation. This framework works with plug-ins that take
+  one or more sensor's raw data and turn that into event
+  objects, that contain more high-level information.
+  This framework supports many kinds of context information
+  and it is possible to develop more plug-ins to allow the
+  apps to access some context information that is not
+  already supported. It is similar to the previous
+  framework but is more focused on delivering context
+  information to apps instead of deploying them.
+  To achieve our goal, our framework could be just a
+  plug-in for Dynamix. The plug-in would
+  need to get the beacon's raw data and
+  turn that into a more high-level information 
+  using a back-end. In this framework,
+  the user needs to install an app to manage the service
+  that runs in background and needs to define some
+  security policies. This could imply a big overhead since
+  we are more focused on developing proximity-based
+  web applications, that don't require such complex security
+  policies. In our framework, the user only need to
+  install one app, let it run in background and turn on
+  bluetooth. Also, this does not offer a complete solution
+  since the owner of one or more points of interest
+  has no way of installing new apps on them.
+  \item[Ionic] Ionic is a framework to develop mobile apps
+  using web technologies, such as HTML and JavaScript. The
+  same code can be deployed, as a native app, to any mobile
+  platform. Using some plug-ins, the apps can access some
+  device's functionalities, such as bluetooth. However,
+  the developer has to configure a back-end and write the
+  code that will interact with it. Also, since the apps are
+  installed like native ones, we still have the problem of
+  having one app for each smart place.
 \end{description}
