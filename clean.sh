@@ -7,3 +7,5 @@ rm *.lot
 rm *.nlo
 rm *.out
 rm *.toc
+rm *.bcf
+rm *.run.xml

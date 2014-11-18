@@ -6,4 +6,4 @@ bibtex $NAME
 pdflatex $NAME
 pdflatex $NAME
 ./clean.sh
-$PDFVIEWER $NAME.pdf
+$PDFVIEWER $NAME.pdf &
