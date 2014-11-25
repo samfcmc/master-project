@@ -29,9 +29,23 @@ build an app that put the phone, in silent mode, if the
 user is in a meeting. Proximity-based apps are
 context-aware apps that allow the user to interact
 with the app if he is nearby some point of interest.
-Table [NUMBER HERE] shows some examples of proximity-based
-apps and their number of downloads and rating in Google
-Play Store and Apple App Store. %TODO: Add table 
+Table \ref{tab:statistics} shows some examples of proximity-based
+apps and their number of installs and rating in Google
+Play Store and Apple App Store. 
+%TODO: Add table 
+\begin{table}[h]
+\label{tab:statistics}
+\centering
+\begin{tabular}{|l|l|l|l|l}
+\cline{1-4}
+App & Store & Downloads & \multicolumn{1}{c|}{Rating} &  \\ \cline{1-4}
+Foursquare & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \cline{1-4}
+Skout & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \cline{1-4}
+Tinder & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \hline
+\end{tabular}
+\caption{Statistics about some existent proximity-based apps}
+\label{my-label}
+\end{table}
 
 % Possible solutions
 To know if the user is nearby some point of interest,
@@ -44,13 +58,10 @@ be very weak inside a building. To make proximity-based
 apps work properly indoors, we need to use other 
 technology. Bluetooth Low Energy (BLE) is a possibility 
 and it's starting to be used for this kind of apps.
-A trademark, called iBeacon, was created by Apple, to
-produce devices, that use BLE, to broadcast a 
+BLE Beacons are devices, that use BLE, to broadcast a 
 universally unique identifier (UUID). A smartphone that
 supports BLE can get this signal. But, only smartphones
 with Bluetooth, at least, version 4, support BLE.
-However, many vendors followed Apple and started producing
-their own iBeacons, which are usually called just beacons.
 For instance, a store owner wants to advertise a promotion
 to potential customers that are nearby his store. To 
 achieve this goal, the store owner would need to put
