@@ -21,11 +21,11 @@
 % Present next sections
 
 % Problem
-The use of context-aware mobile apps have been increasing.
+The use of context-aware mobile apps has been increasing.
 Context-aware mobile apps are apps that use data, acquired
 from one or more sensors and other user's data, 
-such as the calendar. For instance, it's possible to
-build an app that put the phone, in silent mode, if the
+such as the calendar. For instance, it is possible to
+build an app that puts the phone, in silent mode, if the
 user is in a meeting. Proximity-based apps are
 context-aware apps that allow the user to interact
 with the app if he is nearby some point of interest.
@@ -39,9 +39,9 @@ Play Store and Apple App Store.
 \begin{tabular}{|l|l|l|l|l}
 \cline{1-4}
 App & Store & Downloads & \multicolumn{1}{c|}{Rating} &  \\ \cline{1-4}
-Foursquare & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \cline{1-4}
-Skout & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \cline{1-4}
-Tinder & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \hline
+Foursquare & Google Play Store & \num{10000000} - \num{50000000} & 4.1 &  \\ \cline{1-4}
+Skout & Google Play Store & \num{10000000} - \num{50000000} & 4.1 &  \\ \cline{1-4}
+Tinder & Google Play Store & \num{10000000} - \num{50000000} & 4.1 &  \\ \hline
 \end{tabular}
 \caption{Statistics about some existent proximity-based apps}
 \label{my-label}
@@ -51,13 +51,13 @@ Tinder & Google Play Store & 10 000 000 - 50 000 000 & 4.1 &  \\ \hline
 To know if the user is nearby some point of interest,
 we need to know the user's location. We can use GPS to
 get this information. Most apps use this technology because
-most smartphones support it. 
+most smartphones have a GPS receiver. 
 %Show some statistics about smartphones with GPS
 Unfortunately, GPS cannot be used indoors. The signal can
 be very weak inside a building. To make proximity-based
 apps work properly indoors, we need to use other 
-technology. Bluetooth Low Energy (BLE) is a possibility 
-and it's starting to be used for this kind of apps.
+technologies. Bluetooth Low Energy (BLE) is a possibility 
+and it is starting to be used for this kind of apps.
 BLE Beacons are devices, that use BLE, to broadcast a 
 universally unique identifier (UUID). A smartphone that
 supports BLE can get this signal. But, only smartphones
@@ -69,7 +69,7 @@ a beacon inside his store and his customers would need an
 app that would get the beacon's signal and show a 
 notification in the customers' smartphones. 
 
-To develop this apps, that use beacons, we can use the 
+To develop these apps, that use beacons, we can use the 
 BLE API that each 
 mobile platform provides or simply the Software
 Development Kit (SDK) from the 
@@ -83,13 +83,14 @@ would get the promotion for that beacon, from a
 back-end. The developer of this app, would need to
 write the code that gets the beacon's signal and also
 the code that will get the information from the back-end.
+
 Another example could be an app for a museum. The owner
 of a museum wants to show more information, in the 
 visitors' smartphones, about the pieces that are in a given
 room. He would need one beacon for each piece and an app
 that would get the beacon's signal and use a
 back-end to get the right information about a given piece.
-The museum needs to advertise, to it's visitors, that such
+The museum needs to advertise, to its visitors, that such
 an app exists and also, tell them to download the app
 before they enter the museum. The developers of the
 store and the museum apps will write similar code to get
