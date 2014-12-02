@@ -56,7 +56,10 @@ most smartphones have a GPS receiver.
 Unfortunately, GPS cannot be used indoors. The signal can
 be very weak inside a building. To make proximity-based
 apps work properly indoors, we need to use other 
-technologies. Bluetooth Low Energy (BLE) is a possibility 
+technologies.
+\subsection{Bluetooth Low Energy}
+\label{sub:bluetooth_low_energy}
+Bluetooth Low Energy (BLE) is a possibility 
 and it is starting to be used for this kind of apps.
 BLE Beacons are devices, that use BLE, to broadcast a 
 universally unique identifier (UUID). A smartphone that
@@ -96,6 +99,8 @@ before they enter the museum. The developers of the
 store and the museum apps will write similar code to get
 the beacon's signal and get data from a back-end.
 
+\subsection{Smart Places}
+\label{sub:smart_places}
 Before going further, we will introduce the concept of
 smart place. Smart places are places that can, somehow,
 interact with users nearby and users can interact 
@@ -112,7 +117,7 @@ Any mobile app can be a native or a web app. Native apps
 are apps that we have to install and that can access
 device's features, such as BLE. Web apps are web
 applications, designed for mobile devices, that run
-on the device's browser. This apps don't need to be
+on the device's browser. This apps do not need to be
 installed but they don't have access
 to same device's features that native apps have.
 Mobile apps for smart spaces, according to our definition,
@@ -121,7 +126,7 @@ nearby beacons. For that, we need to use bluetooth, which is
 not available in web apps, since they run in the browser.
 We would like to have the best of both sides. In one side,
 native apps can detect nearby beacons. In the other side,
-web apps don't need to be installed.
+web apps do not need to be installed.
 
 We purpose a framework, to develop mobile web apps for smart
 places, that allow developers to only write the code
@@ -133,7 +138,7 @@ right information from a back-end. They would need only
 to write the code for each specific POI. They could give
 a name to each POI and the app will receive that name 
 instead of the beacon's raw data. Since mobile web
-apps don't need to be installed, we choose to support
+apps do not need to be installed, we choose to support
 them instead of native, to allow
 the user to have access to any app in any smart place.
 This apps run on the device's browser. However, detecting
