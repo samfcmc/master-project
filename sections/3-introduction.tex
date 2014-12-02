@@ -32,20 +32,50 @@ with the app if he is nearby some point of interest.
 Table \ref{tab:statistics} shows some examples of proximity-based
 apps and their number of installs and rating in Google
 Play Store and Apple App Store. 
-%TODO: Add table 
+
 \begin{table}[h]
-\label{tab:statistics}
 \centering
-\begin{tabular}{|l|l|l|l|l}
+\begin{tabular}{|l|l|l|r|l}
 \cline{1-4}
-App & Store & Downloads & \multicolumn{1}{c|}{Rating} &  \\ \cline{1-4}
+App & Store & Downloads & \multicolumn{1}{c|}{Rating (from 0 to 5)} &  \\ \cline{1-4}
 Foursquare & Google Play Store & \num{10000000} - \num{50000000} & 4.1 &  \\ \cline{1-4}
 Skout & Google Play Store & \num{10000000} - \num{50000000} & 4.1 &  \\ \cline{1-4}
 Tinder & Google Play Store & \num{10000000} - \num{50000000} & 4.1 &  \\ \hline
 \end{tabular}
 \caption{Statistics about some existent proximity-based apps}
-\label{my-label}
+\label{tab:statistics}
 \end{table}
+
+%Compared wth most used.
+% ratio proximity-based/most used installs
+% ratings are almost the same
+
+In table \ref{tab:most_used} there are some statistics about
+some of the most popular apps. Facebook is the app with the
+greatest number of downloads. One of the apps of table
+\ref{tab:statistics} has, at least, \num{1e7} downloads.
+Facebook has, at least, \num{1e9}. Twitter and Instagram
+have, at least, \num{1e8} downloads. Which means, one of
+the apps of table \ref{tab:statistics} represents
+1/100 of Facebook's downloads and 1/10 of Twitter's
+and Instagram's downloads. In terms of rating, the
+values in table \ref{tab:statistics} are similar to table
+\ref{tab:most_used}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|r|l}
+\cline{1-4}
+App & Store & Downloads & \multicolumn{1}{c|}{Rating (from 0 to 5)} &  \\ \cline{1-4}
+Facebook & Google Play Store & \num{1e9} - \num{5e9} & 4.0 &  \\ \cline{1-4}
+Twitter & Google Play Store & \num{1e8} - \num{5e8} & 4.1 &  \\ \cline{1-4}
+Instagram & Google Play Store & \num{1e8} - \num{5e8} & 4.5 &  \\ \hline
+\end{tabular}
+\caption{Statistics about most-used apps}
+\label{tab:most_used}
+\end{table}
+
+
 
 % Possible solutions
 To know if the user is nearby some point of interest,
