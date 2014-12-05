@@ -4,69 +4,104 @@
 % Architecture
 % 
 
-\section{Architecture}
-\label{sec:architecture}
-This section is about the project's architecture.
-Our solution is split in two main components.
-The Smart Places App is an Android app that the user
-would have to install and that will give him access
-to any app running in any Smart Place. Also, any
-Smart Place owner could use this app to install
-apps in his space.
-The framework would allow developers to develop their
-proximity-based apps for Smart Spaces without writing
-the code to get the beacons' signals and get the data
-from a back-end. 
 % 2/3 pages
 %Your proposed architecture. Can have lots of pictures and 
 % bullet points so it is easy to understand.
+
+\section{Architecture}
+\label{sec:architecture}
+This section is about the project's architecture.
+%Solution overview
+Our solution has three main components,
+as it is shown in figure \ref{fig:overview_architecture}.
 \begin{figure}[!ht]
-  \caption{Architecture}
-  \label{fig:architecture}
+  \centering
+    \includegraphics[width=0.9\textwidth]{img/overview_architecture}
+    \caption{Overview of the solution}
+    \label{fig:overview_architecture}
+\end{figure}
+
+The \textbf{BLE Beacons}, as it is explained in section 
+\ref{sec:introduction}, are small devices that broadcast
+an ID using Bluetooth Low Energy. The \textbf{Back-end} is where it is
+stored information about each beacon. And, the users'
+\textbf{smartphones}, where the \textbf{Smart Places App} will run.
+It is a native Android app that will scan for nearby beacons,
+get the information about them from the Back-end and
+provide that information to the app associated to a 
+given Smart Place.
+\textbf{Users} will use this app to have access
+to any app running in any Smart Place.
+Also, \textbf{Smart Places Owners} can use it to configure
+their Smart Places and configure which applications
+will run there.
+Since these apps will be mobile web apps, they will run
+in a embedded browser inside the Smart Places App.
+\textbf{Developers} will need to use the \textbf{Framework} to
+develop such apps. Also, the Framework will provide an
+Interface between the mobile web app, that will run
+in a given Smart Place, and the Smart Places App.
+Figure \ref{fig:architecture} shows the two main
+blocks that will run inside the smartphone.
+We have the Smart Places App and the Framework itself.
+
+\begin{figure}[!ht]
   \centering
     \includegraphics[width=0.9\textwidth]{img/architecture}
+    \caption{Architecture}
+    \label{fig:architecture}
 \end{figure}
 
 \subsection{Smart Places App}
 \label{sub:smart_places_app}
-\textbf{Beacons Scanner:} 
-Scans for beacons and get their IDs.
-\\
-\textbf{Client:} 
-Communicates with the back-end
-\\
-\textbf{Event Manager:} 
-Gets scanned beacons data and send that to the client.
-The Client will send a request to the back-end to get the
-information associated to the scanned beacons
-\\
-\textbf{App Deployer:} 
-After getting the POI information represented by a given beacon,
-it will send the corresponding mobile web app in the Embedded
-Browser
-\\
-\textbf{Embedded Browser:} 
-Shows the mobile web apps to the user in a embedded web browser
-in the Smart Places App
-\\
-\textbf{Mobile-Web Bridge:} 
-Receives events from the Event Manager, such as, the user
-is nearby a given POI and sent those events to the Event Receiver,
-that runs in the mobile web app.
-\\
+As already mentioned, the Smart Places App will be a native
+Android app that the user and the Smart Place Owner will use,
+in order to be able to use any app of any Smart Place
+and configure a Smart Place, respectively.
+The \textbf{Beacons Scanner} will scan for nearby
+beacons. After scanning, it will deliver the IDs
+of the beacons to the \textbf{Beacons Manager}.
+The Beacons Manager will call the \textbf{Client} to
+get the information about each POI that is being
+represented by each beacon from the back-end or
+from the \textbf{Beacons Cache}. It will be possible to
+configure the Smart Places App to use the cache or not.
+This cache will be an optimization to avoid communication
+with the back-end in each scan. If this cache is being
+used, when a scan is completed, the Client will
+check if the information about that beacon is in
+the cache. If it is, the Client do not need to request
+from the back-end. Otherwise, the Client will
+request the information about all the POIs of that
+Smart Place. In the next beacons scan, if we stay in
+the same Smart Place, there is no need make requests
+to the back-end since all the mapping between beacons
+and POIs is in the cache.
+If no cache is used, the Client will always make requests
+to the back-end in each beacon scan.
+After getting the POI information from the Client,
+the Beacons Manager will call the \textbf{Mobile-web bridge},
+which provides an interface between the native app
+and the web app, that will deliver this information
+to the mobile web app that is running in the
+\textbf{Embedded Browser}. 
+Each time the web app needs to interact
+with the native app, this component is called.
+The \textbf{User Manager} is called to login the
+user and to get the information about the logged
+in user. To perform the user's login, the User Manager
+will call the Client that will send the needed information
+to the back-end to login the user. After this step,
+the mobile web app, can use the Mobile-web bridge
+to get information about the logged in user.
 
 \subsection{Framework}
 \label{sub:framework}
-\textbf{Event Receiver:} 
-Receives events from the Mobile-Web Bridge,
-that runs in the Smart Places App and sends them to the
-Event Manager
-\\
-\textbf{Event Manager:} 
-Receives events from the Event Receiver and handles them, using
-handlers defined by the developer of the mobile web app.
-\\
-\textbf{API:} 
-Application Programming Interface, available to developers, to 
-allow them to set the behavior of each POI
-\\
+The Framework provides, to developers, an \textbf{API} that they
+can use to perform operations about the POIs or about the users.
+The API uses the \textbf{User Manager} when developers want to
+get information about the logged in user.
+Developers are allowed to define callbacks for each POI or to
+even create new POIs. In order to do this, the API
+uses the \textbf{POIs Manager} that will store the callbacks
+for each POI.
