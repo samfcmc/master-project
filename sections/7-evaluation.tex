@@ -13,3 +13,71 @@
  % \item Why is this solution going to be better than others.
  % \item How am I going to defend that it is better.
 %\end{itemize}
+
+% What to measure: Data consumption, memory usage, CPU usage
+% Considering usage of a cache (see architecture)
+% Why measure this... Reference CMov Article
+% Experiments conditions... Same smart place, same app
+% Concrete use case (which app)
+% Compare cache vs no cache...
+% Compare using framework vs not using framework
+
+To evaluate our solution we need to take into account its
+architecture. As was mentioned in section \ref{sec:architecture},
+the component that receives, as input, the beacon raw data and
+returns, as output, the information about a POI, which is the
+Client, can get that data from the Back-end or from the Cache.
+The use of this Cache is optional. It is just a way to reduce
+the communication between the app and the Back-end.
+Since our solution will run in a mobile environment, 
+which is a resource constrained environment,
+despite of some of the smartphones today have
+good CPUs and 1GB or more of RAM.
+% Add reference to this! (see introduction)
+We need to consider energy consumption and other resources
+usage, such as, memory, CPU and transfered data through the
+Internet connection.
+
+In our evaluation we will measure memory and CPU usage
+and data transfered between the app and the back-end.
+We can take conclusions about battery consumption since
+more the CPU, memory and communications usage,
+more the battery consumption.
+
+We need to define a use case, a practical implementation
+of an app for a smart place to run the experiments
+to take such measurements. We will put some beacons
+in a building and the app will show, to the user,
+some information about the points where the beacons
+are installed.
+This app should be implemented using our solution.
+However, we need to compare ours to the existing
+alternatives. To be able to perform such comparison
+we will implement this app in two ways.
+First, using our solution and second without using
+our solution, which means that it will be a native
+app that will use some SDK to interact with the
+beacons.
+
+This experiments, as mentioned below, 
+will measure resources' usage over time, 
+and compare both implementations. In each
+experiment using our solution, we will
+compare both approaches, using the Cache
+and not using it. Also, each experiment
+will run twice, for the two most used
+data connections, WiFi and 3G.
+% Add reference to article about energy consumption
+Experiments, such the one
+in \cite{Pathak2012}, shows that most of the energy, 
+in mobile apps,
+is spent in I/O operations.
+Comparing these
+two types of data connections could provide us
+some information about the
+overhead implied by the communication with
+the back-end. Also, it would be useful to
+know if it could be used using
+a usually, limited data plan, provided by
+the operator.
+
