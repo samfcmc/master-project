@@ -162,49 +162,10 @@ Mobile apps for smart spaces, according to our definition,
 need to be native, because we need to get signals from
 nearby beacons. For that, we need to use bluetooth, which is
 not available in web apps, since they run in the browser.
-We would like to have the best of both sides. In one side,
+A solution to allow developers to get the best of both sides
+is proposed here. In one side,
 native apps can detect nearby beacons. In the other side,
 web apps do not need to be installed.
-
-We propose a framework, to develop mobile web apps for smart
-places, that allow developers to only write the code
-for the application logic and the specific behavior when
-the user is nearby specific points of interest (POI).
-Each beacon represents one POI. Developers would not need
-to write the code that gets beacons' data and get the
-right information from a back-end. They would need only
-to write the code for each specific POI. They could give
-a name to each POI and the app will receive that name 
-instead of the beacon's raw data. 
-
-Since mobile web
-apps do not need to be installed, we choose to support
-them instead of native, to allow
-the user to have access to any app in any smart place.
-This apps run on the device's browser. However, detecting
-nearby beacons is not a feature integrated in the mobile
-Operating System. Our solution would be to build the
-Smart Places App,
-that detects nearby beacons, turn them into names and
-other high-level information, and deliver it to the
-mobile web app. The user would need only this app to
-be able to access any smart place app. Also, the same app
-could be used to configure a smart place.
-For instance, a restaurant's owner wants to offer, to
-his customers, the possibility to make their orders,
-as soon as they sit, from their smartphones. Some
-developers, could develop the app for restaurants,
-using our framework. This developers would only think
-about tables instead of beacons. The owner would need
-to put a beacon in each table. After the beacons
-installation, he could just use the Smart Places App,
-choose the app for restaurants, and put his smartphone
-closer to a beacon and configure it. This configuration
-would be, for each beacon, what is the number of the table
-where it is deployed. Then, his customers would only
-need the Smart Places App, turn on bluetooth and they will
-be notified that they can make their orders from their
-smartphones.
 
 In next section \ref{sec:objectives}, we describe the main
 objectives of the project proposed here.
