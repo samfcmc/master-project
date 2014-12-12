@@ -68,8 +68,21 @@ And that is the main reason for this technology to start to
 be used for proximity-based mobile apps,
 
 BLE Beacons are devices, that use BLE, to broadcast a 
-universally unique identifier (UUID). A smartphone that
-supports BLE can get this signal. But, only smartphones
+universally unique identifier (UUID). 
+These devices use iBeacon protocol, which was created
+by Apple\texttrademark. In this protocol the beacons
+advertise the following sets of bytes:
+\begin{description}
+  \item[UUID] has 16 bytes and it's used to differentiate a 
+  large group of related beacons
+  \item[Major] has 2 bytes and it's used to distinguish a smaller 
+  subset of beacons within the larger group
+  \item[Minor] has 2 bytes and it's used to distinguish individual
+  beacons within the smaller subset
+\end{description}
+A smartphone that
+has BLE can get this signal with the mentioned bytes.
+But, only smartphones
 with Bluetooth, at least, version 4, have BLE.
 For instance, a store owner wants to advertise a promotion
 to potential customers that are nearby his store. To 
