@@ -1,10 +1,4 @@
-rm *.aux
-rm *.bbl
-rm *.blg
-rm *.lof
-rm *.lot
-rm *.nlo
-rm *.out
-rm *.toc
-rm *.bcf
-rm *.run.xml
+FILES="*.au *.bb *.bl *.lo *.lo *.nl *.ou *.to *.bc *.run.xml"
+rm -f $FILES
+cd sections
+rm -f $FILES
