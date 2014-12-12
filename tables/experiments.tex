@@ -1,0 +1,17 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{}} & \multicolumn{6}{c|}{\textbf{Experiments}} \\ \cline{2-7} 
+ & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Data Connection \\ Type\end{tabular}} & WiFI & 3G & WiFi & 3G & WiFi & 3G \\ \hline
+\textbf{Using Cache} & -- & -- & No & No & Yes & Yes \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Using our solution /\\ Using a native SDK\end{tabular}} & SDK & SDK & \begin{tabular}[c]{@{}c@{}}Our\\ solution\end{tabular} & \begin{tabular}[c]{@{}c@{}}Our\\ solution\end{tabular} & \begin{tabular}[c]{@{}c@{}}Our\\ solution\end{tabular} & \begin{tabular}[c]{@{}c@{}}Our\\ solution\end{tabular} \\ \hline
+\textbf{Metrics} & \multicolumn{6}{c|}{CPU usage, Memory usage and data consumption} \\ \hline
+\textbf{\# of Beacons} & \multicolumn{6}{c|}{3} \\ \hline
+\end{tabular}
+\caption{Summary of experiments that will be performed in evaluation}
+\label{tab:experiments}
+\end{table}

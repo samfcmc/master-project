@@ -22,7 +22,7 @@
 % Compare cache vs no cache...
 % Compare using framework vs not using framework
 
-To evaluate our solution we need to take into account its
+To evaluate the proposed solution we need to take into account its
 architecture. As mentioned in section \ref{sec:architecture},
 the component that receives, as input, the beacon raw data and
 returns, as output, the information about a POI, which is the
@@ -31,7 +31,7 @@ The use of this Cache is optional. It is just a way to reduce
 the communication between the app and the Backend.
 Since our solution will run in a mobile environment, 
 which is a resource constrained environment,
-despite of some of the smartphones today have
+despite of some of the smartphones today having
 good CPUs and 1GB or more of RAM.
 % Add reference to this! (see introduction)
 Table \ref{tab:smartphones} shows specifications about some 
@@ -60,20 +60,14 @@ Nokia Lumia 920 & September 2012 & Windows Phone 8 & Dual-core 1.5 Ghz & 1GB & 3
 \caption{Specifications about some smartphones}
 \label{tab:smartphones}
 \end{table}
-We need to consider energy consumption and other resources
+There is a need to consider energy consumption and other resources'
 usage, such as, memory, CPU and transfered data through the
 Internet connection.
 
-In our evaluation we will measure memory and CPU usage
-and data transfered between the app and the backend.
-We can take conclusions about battery consumption since
-more the CPU, memory and communications usage,
-more the battery consumption.
-
 We need to define a use case, a practical implementation
 of an app for a smart place to run the experiments
-to take such measurements. We will put some beacons
-in a building and the app will show, to the user,
+to take such measurements. We will put three beacons,
+each one in a different room and the app will show, to the user,
 some information about the points where the beacons
 are installed.
 This app should be implemented using our solution.
@@ -84,6 +78,22 @@ First, using our solution and second without using
 our solution, which means that it will be a native
 app that will use some SDK to interact with the
 beacons.
+
+Some experiments will be performed in order to compare
+our approach to the classic one, which is to develop a
+native app that uses some SDK to interact with the beacons
+and more code to get information from a backend.
+Table \ref{tab:experiments} summarizes these experiments.
+For each one, there are some conditions specified, such as,
+the data connection type, which can be WiFi or 3G, if
+it is using the Cache from our architecture (explained in 
+\ref{sec:architecture}), if the mobile app that is being
+used was implemented using this solution or if it is
+a native app using an SDK. 
+Also, the metrics and the number of beacons
+are the same for all experiments.
+
+\input{tables/experiments.tex}
 
 This experiments, as mentioned below, 
 will measure resources' usage over time, 
