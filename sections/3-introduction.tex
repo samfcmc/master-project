@@ -22,7 +22,7 @@
 
 % Problem
 The use of context-aware mobile apps has been increasing.
-Context-aware mobile apps are apps that use data, acquired
+Context-aware mobile apps use data, acquired
 from one or more sensors and other user's data, 
 such as the calendar. For instance, it is possible to
 build an app that puts the phone, in silent mode, if the
@@ -129,10 +129,10 @@ the beacon's signal and get data from a backend.
 \subsection{Smart Places}
 \label{sub:smart_places}
 Before going further, we will introduce the concept of
-Smart Place. Smart places are places that can, somehow,
+Smart Place, which is a place that can, somehow,
 interact with users nearby and users can interact 
-with them.
-In this context, a smart place have beacons and the users
+with it.
+In this context, a Smart Place have beacons and the users
 have apps, installed in their smartphones, that can interact
 with them and show relevant information to the user.
 With this definition, we can say, for instance
@@ -152,10 +152,10 @@ on the device's browser. Table \ref{tab:native_vs_web}
 compares some characteristics of both kinds of apps.
 % Table Native vs web
 \input{tables/native_vs_web.tex}
-This apps do not need to be
+Mobile web apps do not need to be
 installed but they do not have access
 to same device's features that native apps have.
-Mobile apps for smart spaces, according to our definition,
+Mobile apps for Smart Places, according to our definition,
 need to be native, because we need to get signals from
 nearby beacons. For that, we need to use bluetooth, which is
 not available in web apps, since they run in the browser.
@@ -167,11 +167,12 @@ web apps do not need to be installed.
 In next section \ref{sec:objectives}, we describe the main
 objectives of the project proposed here.
 Section \ref{sec:related_work} describes related
-work about the development and deployment of
+work about some examples of apps that use BLE BEacons
+and the development and deployment of
 context aware mobile apps.
-In \ref{sec:architecture} it is explained the architecture of our solution. The main components and the role of
+In \ref{sec:architecture} it is explained the architecture of our solution, its main components and the role of
 each one.
-Section \ref{sec:evaluation} is about how we are going
-to evaluate our solution.
-Finally, last section \ref{sec:conclusions} we summarize
+Section \ref{sec:evaluation} is about how the solution
+will be evaluated.
+Finally, last section \ref{sec:conclusions} has a summary of
 the main ideas of the entire document.
