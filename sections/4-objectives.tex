@@ -14,43 +14,65 @@
 % beacons, think only in POI and their meaning
 % Users only need one app for any smart place
 % The same app can be used, for space owners, to install apps
-As was mentioned in section \ref{sec:introduction} we purposed
-to develop a framework to develop proximity-based web mobile
-apps, or, according to our definition of smart place, web
-mobile apps for smart places.
+As mentioned in section \ref{sec:introduction}, we proposed
+to build a framework to develop proximity-based web mobile
+apps, or, according to our definition of Smart Place, web
+mobile apps for Smart Places.
 Part of the framework will need to run in the user's 
 mobile device.
-Given that, we have two main objectives. First, the framework
-itself and second, the Smart Places App.
+One of the main goals is to implement the framework itself.
+Also, a Smart Place will be created and 
+two versions of a simple
+app for it will be developed, using our approach and using the classic approach
+of using some SDK to interact with the beacons.
+We want to test how much our solution improves the
+development of mobile apps for Smart Places.
+In this project, we want to create a solution that
+gives, to developers, abstractions for the technology
+of the POIs and the backend.
+Also, we want to make these Smart Places accessible by 
+anyone who has a mobile device with Bluetooth, at least,
+version 4.0 and without the need to install a large number
+of apps to enjoy Smart Places.
+Another goal we want to achieve is to allow, to owners of
+Smart Places, to configure the POIs using just one app.
+All they would need to do is just to install the BLE Beacons
+that they want, in their Smart Places, and use the app
+to choose which app will ``run'' there and what is the meaning
+of each POI in that app.
 
-The framework should allow developers to develop their apps,
-without needing to write the code to get the beacons' signals
-and get more information from the backend. That would be the
-framework's job. Developers would only need to write the code
-that will run in each POI. Each POI would have a name and
-some parameters specified by the developer. 
-For instance, in the example of the restaurant,
-in \ref{sec:introduction}, the POI could have the name Table and
-a parameter could be the number of the table.
-Developers would only need to write their apps using web
-technologies, such as HTML and JavaScript.
 
-Part of the framework will run on the users' smartphones.
-We will develop the Smart Places App, for Android, which would
-be an  app that will scan for beacons, and will get the 
-corresponding information about the POIs that are being 
-represented by the scanned beacons.
-The user will be notified about the POIs
-that were found and then, he can select one of them and
-start using the associated app. 
-Also, the smart place owner, would be able to use this app
-to install apps, developed using this framework, in his
-smart place.
+% Given that, we have two main objectives. First, the framework
+% itself and second, the Smart Places App.
 
-To summarize, the framework will allow developers to develop
-apps for smart places using nothing more than web technologies
-and without writing the code to scan nearby beacons.
-The Smart Places App will allow the users to access any app,
-developed using this framework, in any smart place. Also,
-the smart places owner could install apps in their spaces
-using this same app.
+% The framework should allow developers to develop their apps,
+% without needing to write the code to get the beacons' signals
+% and get more information from the backend. That would be the
+% framework's job. Developers would only need to write the code
+% that will run in each POI. Each POI would have a name and
+% some parameters specified by the developer. 
+% For instance, in the example of the restaurant,
+% in \ref{sec:introduction}, the POI could have the name Table and
+% a parameter could be the number of the table.
+% Developers would only need to write their apps using web
+% technologies, such as HTML and JavaScript.
+
+% Part of the framework will run on the users' smartphones.
+% We will develop the Smart Places App, for Android, which would
+% be an  app that will scan for beacons, and will get the 
+% corresponding information about the POIs that are being 
+% represented by the scanned beacons.
+% The user will be notified about the POIs
+% that were found and then, he can select one of them and
+% start using the associated app. 
+% Also, the smart place owner, would be able to use this app
+% to install apps, developed using this framework, in his
+% smart place.
+
+% To summarize, the framework will allow developers to develop
+% apps for smart places using nothing more than web technologies
+% and without writing the code to scan nearby beacons.
+% The Smart Places App will allow the users to access any app,
+% developed using this framework, in any smart place. Also,
+% the smart places owner could install apps in their spaces
+% using this same app.
