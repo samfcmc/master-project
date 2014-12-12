@@ -15,7 +15,7 @@ for the application logic and the specific behavior when
 the user is nearby specific points of interest (POI).
 Each beacon represents one POI. Developers would not need
 to write the code that gets beacons' data and get the
-right information from a back-end. They would need only
+right information from a backend. They would need only
 to write the code for each specific POI. They could give
 a name to each POI and the app will receive that name 
 instead of the beacon's raw data. 
@@ -53,7 +53,7 @@ smartphones.
 Our solution has three main components,
 the BLE Beacons, as it is shown in figure 
 \ref{fig:overview_architecture}, 
-the Back-end and an Android app
+the Backend and an Android app
 that will run on the users' smartphones.
 \begin{figure}[!ht]
   \centering
@@ -67,7 +67,7 @@ an ID using Bluetooth Low Energy. The \textbf{Backend} is where information abou
 And, the users'
 \textbf{smartphones}, where the \textbf{Smart Places App} will run.
 It is a native Android app that will scan for nearby beacons,
-get the information about them from the Back-end and
+get the information about them from the Backend and
 provide that information to the app associated to a 
 given Smart Place.
 \textbf{Users} will use this app to have access
@@ -102,22 +102,22 @@ beacons. After scanning, it will deliver the IDs
 of the beacons to the \textbf{Beacons Manager}.
 The Beacons Manager will call the \textbf{Client} to
 get the information about each POI that is being
-represented by each beacon from the back-end or
+represented by each beacon from the backend or
 from the \textbf{Beacons Cache}. It will be possible to
 configure the Smart Places App to use the cache or not.
 This cache will be an optimization to avoid communication
-with the back-end in each scan. If this cache is being
+with the backend in each scan. If this cache is being
 used, when a scan is completed, the Client will
 check if the information about that beacon is in
 the cache. If it is, the Client do not need to request
-from the back-end. Otherwise, the Client will
+from the backend. Otherwise, the Client will
 request the information about all the POIs of that
 Smart Place. In the next beacons scan, if we stay in
 the same Smart Place, there is no need make requests
-to the back-end since all the mapping between beacons
+to the backend since all the mapping between beacons
 and POIs is in the cache.
 If no cache is used, the Client will always make requests
-to the back-end in each beacon scan.
+to the backend in each beacon scan.
 After getting the POI information from the Client,
 the Beacons Manager will call the \textbf{Mobile-web bridge},
 which provides an interface between the native app
@@ -130,7 +130,7 @@ The \textbf{User Manager} is called to login the
 user and to get the information about the logged
 in user. To perform the user's login, the User Manager
 will call the Client that will send the needed information
-to the back-end to login the user. After this step,
+to the backend to login the user. After this step,
 the mobile web app, can use the Mobile-web bridge
 to get information about the logged in user.
 
