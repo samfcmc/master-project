@@ -21,12 +21,25 @@
 
 \pagestyle{plain}
 
+% To have blank pages
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 %
 % Change the margins
 %
 % \usepackage[margin=2.9cm]{geometry}
 
 \begin{document}
+
+% -------------------------------------
+% Title
+% -------------------------------------
 \title{Smart Places}
 
 \subtitle{A framework to develop \\ proximity-based mobile applications}
@@ -42,23 +55,46 @@
 \renewcommand*\l@title[2]{}
 \makeatletter
 
+\afterpage{\blankpage}
+
+% -------------------------------------
+% Table of contents
+% -------------------------------------
+
 \tableofcontents
+
+\afterpage{\blankpage}
+
+% -------------------------------------
+% Abstract and keywords
+% -------------------------------------
 
 \newpage
 \input{sections/1-abstract.tex}
 \input{sections/2-keywords.tex}
+\afterpage{\blankpage}
+
+% -------------------------------------
+% Sections
+% -------------------------------------
+
 \include{sections/3-introduction}
+\afterpage{\blankpage}
 \include{sections/4-objectives}
+\afterpage{\blankpage}
 \include{sections/5-related-work}
+\afterpage{\blankpage}
 \include{sections/6-architecture}
+\afterpage{\blankpage}
 \include{sections/7-evaluation}
+\afterpage{\blankpage}
 \include{sections/8-conclusions}
-\appendix
+\afterpage{\blankpage}\appendix
 \include{sections/9-appendix}
 
-%
+% -------------------------------------
 % Bibliography
-%
+% -------------------------------------
 \bibliographystyle{ieeetr}
 
 \bibliography{references.bib}
