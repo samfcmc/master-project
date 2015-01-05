@@ -9,22 +9,22 @@
 % bullet points so it is easy to understand.
 \section{Architecture}
 \label{sec:architecture}
-We propose a framework, to develop mobile web apps for smart
+We propose a framework to develop mobile web apps for smart
 places, that allow developers to only write the code
 for the application logic and the specific behavior when
 the user is nearby specific points of interest (POI).
-Each beacon represents one POI. Developers would not need
+Each beacon represents one POI. Developers will not need
 to write the code that gets beacons' data and get the
-right information from a backend. They would need only
+right information from a backend. They will need only
 to write the code for each specific POI. They could give
 a name to each POI and the app will receive that name 
 instead of the beacon's raw data. 
 
 Since mobile web apps do not need to be installed, 
-we choose to support
-them instead of native, to allow
+we chose to select
+them for the framrwork instead of native, to allow
 the user to have access to any app in any smart place.
-This apps run on the device's browser. However, detecting
+These apps run on the device's browser. However, detecting
 nearby beacons is not a feature integrated in the mobile
 Operating System. Our solution would be to build the
 Smart Places App,
@@ -51,22 +51,24 @@ smartphones.
 
 %Solution overview
 Our solution has three main components,
-the BLE Beacons, as it is shown in figure 
+the BLE Beacons, as it is shown in Figure 
 \ref{fig:overview_architecture}, 
 the Backend and an Android app
 that will run on the users' smartphones.
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=0.9\textwidth]{img/overview_architecture}
-    \caption{Overview of the solution}
+    \caption{Overview of the proposed solution}
     \label{fig:overview_architecture}
 \end{figure}
-The \textbf{BLE Beacons}, as it is explained in section 
+The \textbf{BLE Beacons}, as explained in section 
 \ref{sec:introduction}, are small devices that broadcast
 an ID using Bluetooth Low Energy. The \textbf{Backend} is where information about each beacon is stored. 
 And, the users'
-\textbf{smartphones}, where the \textbf{Smart Places App} will run.
-It is a native Android app that will scan for nearby beacons,
+\textbf{smartphones}, is where the 
+\textbf{Smart Places App} will run.
+It is a native Android app that will scan for 
+nearby beacons,
 get the information about them from the Backend and
 provide that information to the app associated to a 
 given Smart Place.
@@ -81,6 +83,9 @@ in a embedded browser inside the Smart Places App.
 develop such apps. Also, the Framework will provide an
 Interface between the mobile web app, that will run
 in a given Smart Place, and the Smart Places App.
+
+\subsection{Smart Places App}
+\label{sub:smart_places_app}
 Figure \ref{fig:architecture} shows the two main
 blocks that will run inside the smartphone.
 We have the Smart Places App and the Framework itself.
@@ -90,11 +95,9 @@ We have the Smart Places App and the Framework itself.
     \caption{Architecture}
     \label{fig:architecture}
 \end{figure}
-
-\subsection{Smart Places App}
-\label{sub:smart_places_app}
 As already mentioned, the Smart Places App will be a native
-Android app that the user and the Smart Place Owner will use,
+Android app that the user and the Owner 
+will use,
 in order to be able to use any app of any Smart Place
 and configure a Smart Place, respectively.
 The \textbf{Beacons Scanner} will scan for nearby
@@ -109,8 +112,8 @@ This cache will be an optimization to avoid communication
 with the backend in each scan. If this cache is being
 used, when a scan is completed, the Client will
 check if the information about that beacon is in
-the cache. If it is, the Client do not need to request
-from the backend. Otherwise, the Client will
+the cache. If it is, the Client does not need to request
+data from the backend. Otherwise, the Client will
 request the information about all the POIs of that
 Smart Place. In the next beacons scan, if we stay in
 the same Smart Place, there is no need make requests
@@ -127,8 +130,8 @@ to the mobile web app that is running in the
 Each time the web app needs to interact
 with the native app, this component is called.
 The \textbf{User Manager} is called to login the
-user and to get the information about the logged
-in user. To perform the user's login, the User Manager
+user and to get the information about the user. 
+To perform the user's login, the User Manager
 will call the Client that will send the needed information
 to the backend to login the user. After this step,
 the mobile web app, can use the Mobile-web bridge
@@ -138,8 +141,6 @@ to get information about the logged in user.
 \label{sub:framework}
 The Framework provides, to developers, an \textbf{API} that they
 can use to perform operations about the POIs or about the users.
-The API uses the \textbf{User Manager} when developers want to
-get information about the logged in user.
 Developers are allowed to define callbacks for each POI or to
 even create new POIs. In order to do this, the API
 uses the \textbf{POIs Manager} that will store the callbacks
