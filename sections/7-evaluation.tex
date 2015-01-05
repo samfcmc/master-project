@@ -22,12 +22,17 @@
 % Compare cache vs no cache...
 % Compare using framework vs not using framework
 
-To evaluate the proposed solution we need to take into account its
-architecture. As mentioned in section \ref{sec:architecture},
+To evaluate the proposed solution we need to 
+take into account its
+architecture. As mentioned in section 
+\ref{sec:architecture},
 the component that receives, as input, the beacon raw data and
-returns, as output, the information about a POI, which is the
-Client, can get that data from the Backend or from the Cache.
-The use of this Cache is optional. It is just a way to reduce
+returns, as output, the information about a POI,
+which is the
+Client, can get that data from the Backend or 
+from the Cache.
+The use of this Cache is optional as it is just a 
+way to reduce
 the communication between the app and the Backend.
 Since our solution will run in a mobile environment, 
 which is a resource constrained environment,
@@ -73,16 +78,17 @@ are the same for all experiments.
 
 \input{tables/experiments.tex}
 
-This experiments, as mentioned below, 
+These experiments, as mentioned below, 
 will measure resources' usage over time, 
 and compare both implementations. In each
 experiment using our solution, we will
 compare both approaches, using the Cache
 and not using it.
-Experiments, such the one
-in \cite{Pathak2012}, shows that most of the energy, 
-in mobile apps,
-is spent in I/O operations.
+
+We will not measure power consumption directly.
+Instead we will measure Input/Output (I/O)
+operations, because as as shown in 
+\cite{Pathak2012} they are interrelated.
 Comparing these
 two types of data connections could provide us
 some information about the
