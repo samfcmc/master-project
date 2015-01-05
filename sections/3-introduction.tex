@@ -21,16 +21,17 @@
 % Present next sections
 
 % Problem
-The use of context-aware mobile apps has been increasing.
-Context-aware mobile apps use data, acquired
+The use of context-aware mobile applications (apps)
+has been increasing.
+These apps use context, acquired
 from one or more sensors and other user's data, 
 such as the calendar. For instance, it is possible to
-build an app that puts the phone, in silent mode, if the
+build an app that puts the phone in silent mode if the
 user is in a meeting. Proximity-based apps are
 context-aware apps that allow the user to interact
-with the app if he is nearby some point of interest.
+with the app if he is nearby some point of interest (POI).
 Table \ref{tab:app_comparison} shows some statistics
-about the most popular apps, in Google Play Store,
+about the most popular apps in Google Play Store,
 including examples of proximity-based apps,
 such as Foursquare\footnote{https://foursquare.com},
 Skout\footnote{http://www.skout.com/} and
@@ -39,10 +40,12 @@ Tinder\footnote{http://www.gotinder.com/}
 \input{tables/app_comparison.tex}
 
 Facebook is the app with the
-greatest number of downloads. One of the 
+greatest number of downloads.
+It has, at least, \num{1e9}. Twitter and Instagram
+have, at least, \num{1e8} downloads.
+One of the 
 proximity-based apps has, at least, \num{1e7} downloads.
-Facebook has, at least, \num{1e9}. Twitter and Instagram
-have, at least, \num{1e8} downloads. Which means, one of
+Which means, one of
 the proximity-based apps represents
 1/100 of Facebook's downloads and 1/10 of Twitter's
 and Instagram's downloads. In terms of rating, all apps
@@ -50,47 +53,51 @@ have similar values
 
 % Possible solutions
 To know if the user is nearby some point of interest,
-we need to know the user's location. We can use GPS to
-get this information. Most apps use this technology because
-most smartphones have a GPS receiver. 
+we need to know the user's location. We can use 
+the Global Positioning System 
+(GPS)\cite{masumoto1993global} to
+get this information. Most apps use this technology 
+because most smartphones have a GPS receiver. 
 %Show some statistics about smartphones with GPS
-Unfortunately, GPS cannot be used indoors. The signal can
+Unfortunately, GPS cannot be used indoors because 
+the signal can
 be very weak inside a building. To make proximity-based
 apps work properly indoors, we need to use other 
 technologies.
-\subsection{Bluetooth Low Energy}
+\subsection{BLE}
 \label{sub:bluetooth_low_energy}
-Bluetooth is a wireless short-range communication technology.
+Bluetooth is a wireless, short-range, communication technology.
 Bluetooth Low Energy (BLE)\cite{martellibluetooth} 
 is an improvement of classic Bluetooth since it consumes 
-very low power.
+very low power, allowing it to be used by smaller devices.
 And that is the main reason for this technology to start to 
 be used for proximity-based mobile apps,
 
 BLE Beacons are devices, that use BLE, to broadcast a 
-universally unique identifier (UUID). 
-These devices use iBeacon protocol, which was created
+Universally Unique Identifier (UUID). 
+These devices use the iBeacon protocol, which was created
 by Apple\texttrademark. In this protocol the beacons
 advertise the following sets of bytes:
 \begin{description}
-  \item[UUID] has 16 bytes and it's used to differentiate a 
+  \item[UUID] has 16 bytes and it is used to differentiate a 
   large group of related beacons
-  \item[Major] has 2 bytes and it's used to distinguish a smaller 
+  \item[Major] has 2 bytes and it is used to distinguish a smaller 
   subset of beacons within the larger group
-  \item[Minor] has 2 bytes and it's used to distinguish individual
+  \item[Minor] has 2 bytes and it is used to distinguish individual
   beacons within the smaller subset
 \end{description}
 A smartphone that
 has BLE can get this signal with the mentioned bytes.
 But, only smartphones
 with Bluetooth, at least, version 4, have BLE.
+
 For instance, a store owner wants to advertise a promotion
 to potential customers that are nearby his store. To 
 achieve this goal, the store owner would need to put
 a beacon inside his store and his customers would need an
 app that would get the beacon's signal and show a 
 notification in the customers' smartphones,
-as it is shown figure \ref{fig:store_example}.
+as shown in figure \ref{fig:store_example}.
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=0.9\textwidth]{img/store_example}
@@ -99,41 +106,42 @@ as it is shown figure \ref{fig:store_example}.
     \label{fig:store_example}
 \end{figure}
 
-To develop these apps, that use beacons, we can use the 
-BLE API that each 
-mobile platform provides or simply the Software
+To develop apps that use beacons, the 
+BLE API can be used, provided by the 
+mobile platform or simply by the Software
 Development Kit (SDK) from the 
 beacons vendor. The example of the store owner is a
-simple one. The app just gets the signal and show a 
+simple one. The app just gets the signal and shows a 
 notification. However, if the store owner has more than
 one store and wants to show a different promotion depending
 on each store, the app would need to do more than just get
 the beacon's signal. After getting the signal, the app
-would get the promotion for that beacon, from a 
+would get the promotion data for that beacon, from a 
 backend. The developer of this app, would need to
 write the code that gets the beacon's signal and also
 the code that will get the information from the backend.
 
 Another example could be an app for a museum. The owner
-of a museum wants to show more information, in the 
+of a museum wants to show information, in the 
 visitors' smartphones, about the pieces that are in a given
 room. He would need one beacon for each piece and an app
 that would get the beacon's signal and use a
 backend to get the right information about a given piece.
 The museum needs to advertise, to its visitors, that such
 an app exists and also, tell them to download the app
-before they enter the museum. The developers of the
-store and the museum apps will write similar code to get
+before they enter the museum. For both scenarios the developers will have to write similar code to get
 the beacon's signal and get data from a backend.
 
 \subsection{Smart Places}
 \label{sub:smart_places}
 Before going further, we will introduce the concept of
 Smart Place, which is a place that can, somehow,
-interact with users nearby and users can interact 
+interact with users nearby and then allows 
+users to interact 
 with it.
 In this context, a Smart Place have beacons and the users
-have apps, installed in their smartphones, that can interact
+have apps, installed in their smartphones, 
+that can interact
 with them and show relevant information to the user.
 With this definition, we can say, for instance
 that the owner of the store, wants to
@@ -152,6 +160,7 @@ on the device's browser. Table \ref{tab:native_vs_web}
 compares some characteristics of both kinds of apps.
 % Table Native vs web
 \input{tables/native_vs_web.tex}
+
 Mobile web apps do not need to be
 installed but they do not have access
 to same device's features that native apps have.
@@ -160,19 +169,21 @@ need to be native, because we need to get signals from
 nearby beacons. For that, we need to use bluetooth, which is
 not available in web apps, since they run in the browser.
 A solution to allow developers to get the best of both sides
-is proposed here. In one side,
-native apps can detect nearby beacons. In the other side,
+is proposed here: On one side,
+native apps can detect nearby beacons. On the other side,
 web apps do not need to be installed.
 
-In next section \ref{sec:objectives}, we describe the main
-objectives of the project proposed here.
+In next section, we describe the main
+objectives of the project being proposed.
 Section \ref{sec:related_work} describes related
-work about some examples of apps that use BLE BEacons
+work about some examples of apps that use BLE Beacons
 and the development and deployment of
-context aware mobile apps.
-In \ref{sec:architecture} it is explained the architecture of our solution, its main components and the role of
+context-aware mobile apps.
+In section \ref{sec:architecture} the architecture of our
+solution is explained, 
+its main components and the role of
 each one.
 Section \ref{sec:evaluation} is about how the solution
 will be evaluated.
-Finally, last section \ref{sec:conclusions} has a summary of
+Finally, section \ref{sec:conclusions} has a summary of
 the main ideas of the entire document.
