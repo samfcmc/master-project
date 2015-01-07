@@ -20,11 +20,18 @@ to write the code for each specific POI. They could give
 a name to each POI and the app will receive that name 
 instead of the beacon's raw data. 
 
-Since mobile web apps do not need to be installed, 
-we chose to select
-them for the framrwork instead of native, to allow
-the user to have access to any app in any smart place.
-These apps run on the device's browser. However, detecting
+One of the main goals of this project is to allow
+users to interact with any Smart Place, without
+the need to install one native app for each one.
+Mobile web apps do not need to be installed because
+they run in the device's browser.
+This is the main reason why our framework will
+target mobile web apps instead of native ones.
+This means that, when the user starts to interact
+with a Smart Place, he will interact a mobile
+web app, running in his mobile device's browser.
+
+However, detecting
 nearby beacons is not a feature integrated in the mobile
 Operating System. Our solution would be to build the
 Smart Places App,
