@@ -28,21 +28,38 @@ two versions of a simple
 app for it will be developed, using our approach and using a SDK to interact with the beacons.
 We want to test how much our solution improves the
 development of mobile apps for Smart Places.
-In this project, we want to create a solution that
-gives, to developers, abstractions for the technology
-of the POIs and the backend.
 Also, we want to make these Smart Places accessible by 
 anyone who has a mobile device with Bluetooth, at least,
 version 4.0 and without the need to install a large number
 of apps.
+
+\subsection{Developers}
+\label{sub:developers}
+In this project, we want to create a solution that
+gives, to developers, abstractions for the technology
+of the POIs and the backend. The main goal is
+to allow them to develop mobile apps, in such a way
+that they do not need to write any code to get
+identifiers from beacons and get data from a backend.
+Depending on the POI to where the user is near, 
+we aim to allow developers to perform any computation,
+instead of just redirect the user to an URL.
+For instance, in the restaurant scenario in section
+\ref{sub:bluetooth_low_energy}, developers would
+write the code to get the table's number where the
+user is and make the order. They will not need
+to know how to perform the mapping between beacons
+and tables
+
+\subsection{Owners}
+\label{sub:owners}
 Another goal we want to achieve is to allow owners of
 Smart Places to configure the POIs using just one app.
-All they would need to do is just to install the BLE Beacons
-that they want, in their Smart Places, and use the app
-to choose which app will ``run'' there and what is the meaning
-of each POI in that app.
-
-
+All they would need to do is just to deploy the BLE Beacons
+that they want, in their Smart Places, and use their
+mobile devices
+to choose which web app will ``run'' there and what 
+is the meaning of each POI.
 % Given that, we have two main objectives. First, the framework
 % itself and second, the Smart Places App.
 
