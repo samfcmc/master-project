@@ -150,6 +150,62 @@ even create new POIs. In order to do this, the API
 uses the \textbf{POIs Manager} that will store the callbacks
 for each POI.
 
+In section \ref{sub:summary} main limitations of
+related work were presented.
+The solution being proposed here tries to
+circumvent them. The Smart Places App will
+offer, to the owners of Smart Places, an interface
+where they can manage their POIs.
+In terms of communication with the backend,
+REST\cite{richardson2008restful} will be used instead
+of SOAP. To invoke SOAP web services the client needs
+to get the specification from a 
+WSDL\footnote{Web Services Description Language:
+http://www.w3.org/TR/wsdl} file, specify the
+transport protocol and encode the request in a
+XML\footnote{Extensible Markup Language:
+http://www.w3.org/XML/} document. To invoke a
+RESTful web service the client just needs to know
+the endpoints and make an 
+HTTP\footnote{Hypertext Transfer Protocol:
+http://tools.ietf.org/html/rfc7235} request.
+If messages are encoding in 
+JSON\footnote{JavaScript Object Notation:
+http://www.json.org/}, they will
+get smaller than if they were encoded in XML.
+This is important to consider in a resource constrained
+mobile environment. SOAP is more flexible than REST
+because any transport protocol can be used and it is
+possible to add headers to handle security features.
+However, we do not need such flexibility.
+Another limitation of related work is that developers
+have to write code to interact with the technology
+where location data comes from. Our solution aims to
+create abstractions for the BLE Beacons, which is the
+technology being used to get location data.
+Our mobile app will scan for beacons and get all the
+needed data from the backend. Developers will only have
+to use POI objects instead of identifiers of beacons.
+The mapping between beacons and POIs will be performed
+by the framework.
+In terms of permissions, our app will only need the
+user to turn on the Bluetooth receiver of his
+mobile device. He will not have to configure
+anything else in order to use it.
+To avoid to make the user install one native app
+in order to be able to interact with a Smart Place
+our solution will allow developers to develop their
+applications for Smart Places using web technologies,
+such as HTML, CSS and Javascript. This applications
+will run in the Embedded Browser of our mobile app.
+Also, instead of just mapping BLE Beacons to URLs we map
+BLE Beacons to POI objects. Developers will receive
+these objects, in their mobile web apps developed for
+Smart Places, and any kind of computation can be 
+performed instead of just redirecting the user to an
+URL.
+
+
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=0.9\textwidth]{img/smart-places-uml}
