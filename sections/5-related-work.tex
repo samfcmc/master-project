@@ -390,7 +390,23 @@ devices' functionalities, such as the camera or
 accelerometer, from Javascript code.
 To access such functionalities developers build plugins.
 Any developer can develop plugins and use plugins
-developed by others.
+developed by others. These plugins act as bridges
+between Javascript code running in the device's
+browser and native code.
+The code to access the native features
+needs to be implemented for each mobile platform
+that developers aim to support.
+For instance, if
+the developer wants to access Bluetooth from
+the Javascript code he needs a plugin for that.
+This plugin will have native code that will
+use the mobile platform API to access this
+feature and will communicate with the Javascript
+code. To make Bluetooth accessible
+for the three main mobile platforms
+(Android, iOS and Windows Phone) the plugin
+needs an implementation for each platform, that
+access the device's Bluetooth API.
 \\
 %Phonegap
 \textbf{PhoneGap\footnote{http://phonegap.com/}:}
