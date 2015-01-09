@@ -266,6 +266,56 @@ these functions will run in the mobile
 device's browser sandbox there are no security
 issues about any malicious code.
 
+In terms of development of the framework there are
+several technical challenges:
+\begin{itemize}
+
+\item The time interval, between each
+scan process.
+If this value is too high
+some beacons can be missed and the user will
+not be able to interact with some Smart Places.
+If this value is too low, the user will run out
+of battery faster than usual;
+
+\item If the user is nearby a lot of Smart Places
+too many notifications can appear in his mobile
+device. A solution could be to put all
+the Smart Places that were found in just one
+notification. However, when the user moves more
+beacons can be scanned and more Smart Places
+will be discovered and the user will receive
+more notifications;
+
+\item Get the nearest beacon. As explained before,
+when the user chose a Smart Place, the mobile
+app will keep on running in background 
+trying to map beacons to POIs. Only the
+nearest beacon is selected in each scan.
+Most beacons vendors provide SDKs to handle
+scanning and getting information from the beacons.
+Most of them allow developers to get the distance.
+Unfortunately, the method used to get this
+value is not so accurate because it relies on the strength
+of the signal, which can be very weak due to
+many factors besides the distance, since it
+is a wireless signal.
+
+\item How to pass POI objects from the mobile
+app to the web application running inside the
+Embedded Browser.
+The application that belong to a Smart Place
+will run in the mobile device's browser.
+However, after mapping beacons to POI objects,
+those objects need to be passed to the 
+application in the browser. This objects
+are acquired by the mobile app that runs
+native code and need to be passed to
+code that is running in the browser
+that is typically Javascript and not native.
+
+\end{itemize}
+
 In section \ref{sub:summary} the main limitations 
 of related work were presented.
 The solution being proposed here tries to
