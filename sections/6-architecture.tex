@@ -152,6 +152,24 @@ even create new POIs. In order to do this, the API
 uses the \textbf{POIs Manager} that will store the callbacks
 for each POI.
 
+In order to understand how the presented components
+interact with each other and how the whole solution will
+work, we need to take into consideration the data model
+shown in Figure \ref{fig:uml}.
+As mentioned in \ref{sec:introduction}, a Smart Place
+is a set of POIs. Each BLE Beacon represents a POI.
+Each POI has a name and a set of parameters, which are
+pairs with a key and a value.
+For instance, in the example of the restaurant,
+introduced in section \ref{sub:bluetooth_low_energy},
+each POI could have the name ``table'' and one 
+parameter with key ``number'' and the value would
+be the number of the table. Since the applications
+that will belong to a Smart Place will be
+mobile web apps, they will run in some web
+server. This is why each Smart Place has an URL,
+that will act as an entry point.
+
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=0.9\textwidth]{img/smart-places-uml}
@@ -159,16 +177,73 @@ for each POI.
     \label{fig:uml}
 \end{figure}
 
-% Data Model
+% Two phases: Finding Smart Places and finding POIs
+% First phase: how it works
+% Second phase: how it works
+% why two phases (this is not a CMS for beacons...
+% more powerful...)
+% Developers will only deal with POIs...
+
+The mobile app that will be developed, 
+the Smart Places App, will run in background,
+scanning for nearby beacons. After the scan process,
+if there are beacons that were found each one
+can be mapped to one of the following kinds of
+objects: Smart Place or POI.
+Two phases can be considered: Finding Smart Places
+and finding POIs.
+As mentioned before, a Smart Place is a set of
+POIs. Considering these two phases, the mobile app
+will work as follows:
+
+\begin{itemize}
+\item After beacons are found, the app will try to map
+these beacons to Smart Places. Figure
+\ref{fig:sequence-smart-places} shows how the components
+of the solution interact with each other to get
+available Smart Places from the beacons that were found.
+The Beacons Manager sends the list of found beacons
+to the Client which will request, to the Backend,
+to map those beacons to Smart Places.
+After this step, the Beacons Manager calls the
+Notification Service in order to show a notification
+about the Smart Places that were found.
+Then, the user can ignore the notification or
+choose one Smart Place. If he selects one,
+the Beacons Manager calls the Mobile-Web Bridge,
+which will request the Embedded Browser to load
+the URL of the selected Smart Place. Now, the user
+will have access to the web application associated
+with the Smart Place;
+\item In the same Smart Place, the user will
+pass near multiple POIs. The process of mapping
+beacons to POIs is shown in Figure
+\ref{fig:sequence-poi}.
+After the previous
+phase, the app will keep running in background
+scanning for beacons. However, after beacons
+are found, the Beacons Manager will select the
+nearest beacon, that belongs to the Smart Place
+that the user selected. Then, the Beacons
+Manager calls the Client that will request
+the Backend to get the POI object for that
+beacon. After the Client receives the response,
+it is sent back to the Beacons Manager, which will
+call the Notification Service to show a notification,
+in the user's mobile device, about the POI that was
+found. After the user clicks on the notification,
+the Beacons Manager will call the Mobile-Web
+Bridge to deliver the POI object to the mobile
+web application that belongs to the Smart Place
+and is running in the Embedded Browser.
+\end{itemize}
 
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=1\textwidth]{img/smart-places-sequence}
     \caption{Sequence Diagram}
-    \label{fig:sequence}
+    \label{fig:sequence-smart-places}
 \end{figure}
-
-
 
 \begin{figure}[!ht]
   \centering
@@ -177,9 +252,22 @@ for each POI.
     \label{fig:sequence-poi}
 \end{figure}
 
+As mentioned before, all the mapping between
+beacons and Smart Places and POIs will be handled
+by the framework. Developers will be able
+to develop their applications without having to
+configure any backend and writing code to handle
+the BLE Beacons.
+They will only write the code
+that will run inside the Embedded Browser.
+Their applications will receive POI objects,
+which can be handled by any function. Since
+these functions will run in the mobile
+device's browser sandbox there are no security
+issues about any malicious code.
 
-In section \ref{sub:summary} main limitations of
-related work were presented.
+In section \ref{sub:summary} the main limitations 
+of related work were presented.
 The solution being proposed here tries to
 circumvent them. The Smart Places App will
 offer, to the owners of Smart Places, an interface
