@@ -54,7 +54,7 @@
 \renewcommand*\l@title[2]{}
 \makeatletter
 
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 
 % -------------------------------------
 % Table of contents
@@ -62,7 +62,7 @@
 
 \tableofcontents
 
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 
 % -------------------------------------
 % Abstract and keywords
@@ -71,24 +71,24 @@
 \newpage
 \input{sections/1-abstract.tex}
 \input{sections/2-keywords.tex}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 
 % -------------------------------------
 % Sections
 % -------------------------------------
 
 \include{sections/3-introduction}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 \include{sections/4-objectives}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 \include{sections/5-related-work}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 \include{sections/6-architecture}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 \include{sections/7-evaluation}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 \include{sections/8-conclusions}
-\afterpage{\blankpage}
+\afterpage{\cleardoublepage}
 \appendix
 \include{sections/9-appendix}
 
