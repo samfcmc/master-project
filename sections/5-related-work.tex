@@ -24,7 +24,7 @@ get good insight about the potential use cases of this
 technology and the apps developed using it.
 \\
 % BlueSentinel
-\textbf{BlueSentinel\cite{Conte2014}:} is a 
+\textbf{BlueSentinel}\cite{Conte2014}: is a 
 occupancy detection system, for smart buildings,
 that uses BLE Beacons to detect the presence of
 people. The concept of a smart building
@@ -43,7 +43,8 @@ perform actions to optimize the
 building's power efficiency.
 Unfortunately, there is a limitation
 of iBeacon protocol implementation
-in iOS. Beacons can be received, by the apps,
+in iOS\footnote{http://www.apple.com/ios}.
+Beacons can be received, by the apps,
 only when these are active. When the apps are in
 background, they are waken up only to handle
 enter/exit region events. To circumvent this
@@ -62,7 +63,7 @@ need to interact with it anymore, since it
 will run in background.
 \\
 % Blue View
-\textbf{BlueView\cite{Chen2013}:} is a system to help
+\textbf{BlueView}\cite{Chen2013}: is a system to help
 visually impaired people to perceive some POIs.
 This solution has two main components: The viewer device
 and the Beacon Points (BPs). The first one is a mobile phone,
@@ -76,11 +77,11 @@ for nearby BPs; then, a list of the names of
 BPs is created. This list is refreshed anytime a new
 BP is detected and the user is informed through auditory
 feedback. The second step consists of the user, using
-the viewer device, establishing a connection with a BP
+the viewer's device, establishing a connection with a BP
 attached to an object. Finally, using audio prompt, the BP
 will assist the user in locating the object.
 Despite of this solution being a mobile app, installed
-in the viewer device, the authors do not have in
+in the viewer's device, the authors do not have in
 consideration the typical concerns of any mobile app,
 such as the energy consumption.
 The authors tested the application, in 2013,
@@ -94,7 +95,7 @@ used.
 \\
 % MOSES
 \textbf{MOSES
-(Mobile Opportunistic System for Experience Sharing)\cite{BenAbdesslem2014}:}
+(Mobile Opportunistic System for Experience Sharing)}\cite{BenAbdesslem2014}:
 % In exhibitions, share experiences and communicate with
 % other participants
 % Roaming charges... No Internet access
@@ -148,7 +149,7 @@ participants and it emulates an intermittent Internet
 connection, acting as a WiFi access point.
 \\
 % Context capture
-\textbf{ContextCapture\cite{Antila2011}:}
+\textbf{ContextCapture}\cite{Antila2011}:
 % Usage of context-based awareness in status updates
 % Allows users to add different descriptions of context 
 % information to their Twitter messages
@@ -299,18 +300,18 @@ are:
 \begin{itemize}
 \item
 Devices that are used to get location data, such as
-the ones already mentioned. 
-\item The users' mobile devices.
+the ones already mentioned;
+\item The users' mobile devices;
 \item The Database Server, which is where the mapping
 between geographical coordinates and location
-information is stored.
+information is stored;
 \item And, the Application Server, which provides web services for
 mobile clients. This server also communicates
-with the Database Server.
+with the Database Server;
 \end{itemize}
 The mobile device get geographical coordinates
 from any source and send that data, in a
-SOAP \cite{Seely:2001:SCP:560836} message,
+SOAP\cite{Seely:2001:SCP:560836} message,
 to the appropriate web service in the Application
 Server. This server, communicates with the Database Server
 to query the database, which sends back a response with
@@ -332,7 +333,7 @@ a more efficient message encoding could be used
 instead.
 \\
 % Dynamix
-\textbf{Dynamix\cite{Carlson2012}:}
+\textbf{Dynamix}\cite{Carlson2012}:
 is a framework to develop
 mobile native and web apps that allow them to receive
 context information, for instance, position and device's
@@ -371,10 +372,7 @@ Since we propose a framework to develop proximity-based
 mobile web apps, a good insight, about some existing
 solutions to develop mobile apps using web technologies,
 such as 
-HTML\footnote{http://www.w3.org/TR/html}, 
-CSS\footnote{http://www.w3.org/TR/css-2010}
-and 
-Javascript\footnote{http://www.w3.org/standards/webdesign/script.html}, 
+HTML, CSS and Javascript, 
 is needed.
 These solutions, described below, allow developers to
 write their apps, using HTML, CSS and Javascript, as
@@ -404,7 +402,9 @@ use the mobile platform API to access this
 feature and will communicate with the Javascript
 code. To make Bluetooth accessible
 for the three main mobile platforms
-(Android, iOS and Windows Phone) the plugin
+(Android, iOS and 
+Windows Phone\footnote{http://www.windowsphone.com/})
+the plugin
 needs an implementation for each platform, that
 access the device's Bluetooth API.
 \\
