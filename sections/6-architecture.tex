@@ -28,7 +28,10 @@ they run in the device's browser.
 This is the main reason why our framework will
 target mobile web apps instead of native ones.
 This means that, when the user starts to interact
-with a Smart Place, he will interact with a mobile
+with a Smart Place, he will initially discover the
+beacons using a native app but from that moment
+onwards
+he will interact with a mobile
 web app, running in his mobile device's browser.
 
 However, detecting
@@ -84,7 +87,7 @@ Also, \textbf{Smart Places Owners} can use it to configure
 their Smart Places and configure which applications
 will run there.
 Since these apps will be mobile web apps, they will run
-in a embedded browser inside the Smart Places App.
+in a embedded web browser inside the Smart Places App.
 \textbf{Developers} will need to use the \textbf{Framework} to
 develop such apps. Also, the Framework will provide an
 Interface between the mobile web app, that will run
@@ -130,7 +133,7 @@ the Beacons Manager will call the \textbf{Mobile-web Bridge},
 which provides an interface between the native app
 and the web app, that will deliver this information
 to the mobile web app that is running in the
-\textbf{Embedded Browser}. 
+\textbf{Embedded Web Browser}. 
 Each time the web app needs to interact
 with the native app, this component is called.
 The \textbf{User Manager} is called to login the
@@ -211,7 +214,7 @@ about the Smart Places that were found.
 Then, the user can ignore the notification or
 choose one Smart Place. If he selects one,
 the Beacons Manager calls the Mobile-Web Bridge,
-which will request the Embedded Browser to load
+which will request the Embedded Web Browser to load
 the URL of the selected Smart Place. Now, the user
 will have access to the web application associated
 with the Smart Place;
@@ -235,20 +238,20 @@ found. After the user clicks on the notification,
 the Beacons Manager will call the Mobile-Web
 Bridge to deliver the POI object to the mobile
 web application that belongs to the Smart Place
-and is running in the Embedded Browser.
+and is running in the Embedded Web Browser.
 \end{itemize}
 
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=1\textwidth]{img/smart-places-sequence}
-    \caption{Sequence Diagram}
+    \caption{Discover smart place sequence diagram}
     \label{fig:sequence-smart-places}
 \end{figure}
 
 \begin{figure}[!ht]
   \centering
     \includegraphics[width=1\textwidth]{img/smart-places-poi-sequence}
-    \caption{Sequence Diagram}
+    \caption{Mapping beacons in a smart place sequence diagram}
     \label{fig:sequence-poi}
 \end{figure}
 
@@ -259,7 +262,7 @@ to develop their applications without having to
 configure any backend and writing code to handle
 the BLE Beacons.
 They will only write the code
-that will run inside the Embedded Browser.
+that will run inside the Embedded Web Browser.
 Their applications will receive POI objects,
 which can be handled by any function. Since
 these functions will run in the mobile
@@ -303,7 +306,7 @@ is a wireless signal.
 
 \item How to pass POI objects from the mobile
 app to the web application running inside the
-Embedded Browser.
+Embedded Web Browser.
 The application that belong to a Smart Place
 will run in the mobile device's browser.
 However, after mapping beacons to POI objects,
@@ -363,7 +366,7 @@ in order to be able to interact with a Smart Place
 our solution will allow developers to develop their
 applications for Smart Places using web technologies,
 such as HTML, CSS and Javascript. This applications
-will run in the Embedded Browser of our mobile app.
+will run in the Embedded Web Browser of our mobile app.
 Also, instead of just mapping BLE Beacons to URLs we map
 BLE Beacons to POI objects. Developers will receive
 these objects, in their mobile web apps developed for
